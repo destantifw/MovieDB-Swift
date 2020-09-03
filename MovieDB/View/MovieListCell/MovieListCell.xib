@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="movieListCell" reuseIdentifier="movieListCell" id="1Au-YX-ref" customClass="MovieListCell" customModule="MovieDB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="619" height="955"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7Sh-s0-blv">
+                <rect key="frame" x="0.0" y="0.0" width="619" height="955"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ks-8W-oEy">
+                        <rect key="frame" x="10" y="10" width="599" height="935"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QNG-Ng-oHO">
+                                <rect key="frame" x="0.0" y="0.0" width="599" height="875"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbj-dT-fEL">
+                                <rect key="frame" x="10" y="880" width="579" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ty9-Xm-cN7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mbj-dT-fEL" secondAttribute="trailing" constant="10" id="4j8-hD-ghn"/>
+                            <constraint firstAttribute="bottom" secondItem="mbj-dT-fEL" secondAttribute="bottom" constant="5" id="B5W-WS-cs8"/>
+                            <constraint firstItem="mbj-dT-fEL" firstAttribute="leading" secondItem="5ks-8W-oEy" secondAttribute="leading" constant="10" id="Dje-Iv-yiF"/>
+                            <constraint firstAttribute="trailing" secondItem="QNG-Ng-oHO" secondAttribute="trailing" id="FAZ-gb-qxe"/>
+                            <constraint firstItem="mbj-dT-fEL" firstAttribute="top" secondItem="QNG-Ng-oHO" secondAttribute="bottom" constant="5" id="W3W-rw-CqM"/>
+                            <constraint firstItem="QNG-Ng-oHO" firstAttribute="top" secondItem="5ks-8W-oEy" secondAttribute="top" id="bm3-gn-K9h"/>
+                            <constraint firstItem="QNG-Ng-oHO" firstAttribute="leading" secondItem="5ks-8W-oEy" secondAttribute="leading" id="pvf-JD-1V3"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="5ks-8W-oEy" secondAttribute="bottom" constant="10" id="7nx-fW-03y"/>
+                    <constraint firstAttribute="trailing" secondItem="5ks-8W-oEy" secondAttribute="trailing" constant="10" id="JYp-oV-7Sk"/>
+                    <constraint firstItem="5ks-8W-oEy" firstAttribute="leading" secondItem="7Sh-s0-blv" secondAttribute="leading" constant="10" id="QaG-I3-tuL"/>
+                    <constraint firstItem="5ks-8W-oEy" firstAttribute="top" secondItem="7Sh-s0-blv" secondAttribute="top" constant="10" id="XGU-2a-FW6"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="619" height="955"/>
+            <connections>
+                <outlet property="movieImageView" destination="QNG-Ng-oHO" id="XCv-cU-Cbq"/>
+                <outlet property="movieTitle" destination="mbj-dT-fEL" id="Z8U-4x-wDH"/>
+            </connections>
+            <point key="canvasLocation" x="84.782608695652186" y="240.73660714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>
