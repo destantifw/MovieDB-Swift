@@ -147,19 +147,17 @@ class MovieDetailViewController: UIViewController {
     }
     
     private func loadVideo(){
-        let config = WKWebViewConfiguration()
+        
         trailerWebView.uiDelegate = self
-        self.trailerWebView = WKWebView(frame: self.view.frame, configuration: config)
         guard let data = videoData else {
             return
         }
-        guard let url = URL(string: data.url) else {
+        guard let url = URL(string: "https://www.youtube.com") else {
             return
         }
-        
-        print("yutuburl \(url)")
-        let youtubeRequest = URLRequest(url: url)
-        trailerWebView.load(youtubeRequest)
+
+        let youtubeURL = "<iframe width=\"100%\" height=\"600\" src=\"\(data.url)\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+        trailerWebView.loadHTMLString(youtubeURL, baseURL: url)
     }
     
 }

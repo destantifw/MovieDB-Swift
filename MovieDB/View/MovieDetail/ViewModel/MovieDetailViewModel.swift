@@ -217,6 +217,6 @@ struct TrailerViewModel {
     let url: String
     
     init(video: MovieVideosListModel) {
-        self.url = "https://www.youtube.com/watch?v=\(video.key)"
+        self.url = "https://www.youtube.com/embed/\(video.key)"
     }
 }
