@@ -40,9 +40,10 @@ class MovieListViewController: UIViewController {
         return collectionView
     }()
     
-    init(viewModel: MovieListViewModel) {
+    init(viewModel: MovieListViewModel, title: String) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        self.title = title
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -90,7 +91,7 @@ class MovieListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupNavigationBarTitle("Genre")
+        setupNavigationBarTitle(self.title ?? "Movies")
         viewModel.ready()
     }
     

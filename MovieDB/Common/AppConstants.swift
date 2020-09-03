@@ -18,6 +18,7 @@ final class AppContants {
     static let movieListByGenrePath = "/discover/movie"
     
     static let movieDetailPath = "/movie/"
+    static let genreDetailPath = "genre"
     static let videoDetailPath = "/videos"
     static let reviewDetailPath = "/reviews"
     

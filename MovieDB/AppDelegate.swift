@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
 
         if let window = window {
-            let viewModel = MovieListViewModel(networkingService: NetworkingApi())
-            let viewController = MovieListViewController(viewModel: viewModel)
+            let viewModel = MovieCategoryGenreViewModel(networkingService: MovieGenreApi())
+            let viewController = MovieCategoryGenreViewController(viewModel: viewModel, tableView: nil)
             
             window.rootViewController = UINavigationController(rootViewController: viewController)
             window.makeKeyAndVisible()

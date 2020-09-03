@@ -10,17 +10,17 @@ import Foundation
 
 
 protocol NetworkingService {
-    func getMovieByGenre(withGenre genreId: String, withPage page: Int, completion: @escaping (Result<MoviePage, Error>) -> Void)
+    func getMovieByGenre(withGenre genreId: Int, withPage page: Int, completion: @escaping (Result<MoviePage, Error>) -> Void)
 }
 
 class NetworkingApi: NetworkingService {
     
     private let session = URLSession.shared
     
-    func getMovieByGenre(withGenre genreId: String, withPage page: Int, completion: @escaping (Result<MoviePage, Error>) -> Void) {
+    func getMovieByGenre(withGenre genreId: Int, withPage page: Int, completion: @escaping (Result<MoviePage, Error>) -> Void) {
         
         var parameter = [String: String]()
-        parameter["with_genre"] = genreId
+        parameter["with_genres"] = "\(genreId)"
         parameter["api_key"] = AppContants.apiKey
         parameter["page"] = "\(page)"
         

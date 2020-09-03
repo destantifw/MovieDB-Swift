@@ -75,11 +75,6 @@ final class MovieDetailViewModel {
         //        movies = pages.movies
     }
     
-    func didSelectRow(at indexPath: IndexPath) {
-        //        if movies.isEmpty { return }
-        //        didSelecteRepo?(movies[indexPath.item].id)
-    }
-    
     // Private
     private func startGetMovieDetail() {
         

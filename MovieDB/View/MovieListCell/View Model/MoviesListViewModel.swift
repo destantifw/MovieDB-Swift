@@ -10,7 +10,7 @@
 import Foundation
 
 final class MovieListViewModel {
-    // Outputs
+    
     var isRefreshing: ((Bool) -> Void)?
     var didUpdateRepos: (([MoviesListItemViewModel]) -> Void)?
     var didSelecteRepo: ((Int) -> Void)?
@@ -26,26 +26,28 @@ final class MovieListViewModel {
     private var pages: [MoviePage] = []
     private var currentPage = 1
     private var totalPages = 0
+    private var id: Int
     
     // Dependencies
     private let networkingService: NetworkingService
     
-    init(networkingService: NetworkingService) {
+    init(networkingService: NetworkingService, id: Int) {
         self.networkingService = networkingService
+        self.id = id
     }
     
     // Inputs
     func ready() {
         isRefreshing?(true)
         
-        startSearchWithGenre("28", withPage: currentPage)
+        startSearchWithGenre(self.id, withPage: currentPage)
     }
     
     func didChangePage() {
         let page = currentPage + 1
         guard currentPage <= totalPages else {return}
         
-        startSearchWithGenre("28", withPage: page)
+        startSearchWithGenre(id, withPage: page)
     }
     
     private func appendPage(_ moviesPage: MoviePage) {
@@ -65,7 +67,7 @@ final class MovieListViewModel {
     }
     
     // Private
-    private func startSearchWithGenre(_ genreId: String, withPage: Int) {
+    private func startSearchWithGenre(_ genreId: Int, withPage: Int) {
        
         isRefreshing?(true)
         networkingService.getMovieByGenre(withGenre: genreId, withPage: withPage) { (result) in
